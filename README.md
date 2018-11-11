@@ -4,9 +4,12 @@ This plugin provides basic editor support for the programming language Ante.
 Currently, this only includes basic syntax highlighting, although language server
 support is planned once one is available.
 
+![Syntax Highlighting](images/syntax-highlighting.png)
+
 ## Features
 
-\!\[Syntax Highlighting\]\(images/syntax-highlighting-full.png\)
+- Syntax Highlighting:
+![Syntax Highlighting](images/syntax-highlighting-full.png)
 
 ## Installation
 
