@@ -1,0 +1,160 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Ante",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#preprocs"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.ante",
+					"match": "\\b(fun) ([a-z_]*):",
+					"captures":{
+						"1": {
+							"name": "keyword.control.ante"
+						},
+						"2": {
+							"name": "entity.name.function.ante"
+						}
+					}
+				},
+				{
+					"name": "keyword.control.ante",
+					"match": "\\b(if|elif|else|fun|import|with|for|in|do|while|continue|break|return|this|is|isnt|ext|new|match|trait|module|type|where|when|block|and|or|not|then|do|as|pub|pro|pri|const|ante|let|mut|global)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns":[
+				{
+					"name": "comment.line.ante",
+					"match": "//.*$"
+				},
+				{
+					"name": "comment.block.ante",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.control.ante",
+					"match": "[+\\-*/%\\^:|#&=<>]"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "entity.name.type.ante",
+					"match": "\\b(i8|i16|i32|i64|isz|u8|u16|u32|u64|usz|f16|f32|f64|c8|void|bool|ref)\\b"
+				},
+				{
+					"name": "entity.name.type.ante",
+					"match": "\\b[A-Z]\\w*\\b"
+				},
+				{
+					"name": "entity.name.type.ante",
+					"match": "'[a-z_]\\w*\\b"
+				}
+			]
+		},
+		"preprocs": {
+			"patterns": [
+				{
+					"name": "keyword.control.ante",
+					"match": "![a-z_]\\w*"
+				},
+				{
+					"name": "keyword.control.ante",
+					"begin": "!\\[",
+					"end": "]",
+					"patterns": [
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#literals"
+						},
+						{
+							"include": "#types"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#operators"
+						}
+					]
+				}
+			]
+		},
+		"literals": {
+			"patterns": [
+				{
+					"name": "constant.numeric.ante",
+					"match": "\\b[0-9_]+([ui](8|16|32|64|sz))?\\b"
+				},
+				{
+					"name": "constant.numeric.ante",
+					"match": "\\b0b[01_]+([ui](8|16|32|64|sz))?\\b"
+				},
+				{
+					"name": "constant.numeric.ante",
+					"match": "\\b0o[0-7_]+([ui](8|16|32|64|sz))?\\b"
+				},
+				{
+					"name": "constant.numeric.ante",
+					"match": "\\b0x[0-9A-Fa-f_]+([ui](8|16|32|64|sz))?\\b"
+				},
+				{
+					"name": "constant.other.ante",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.character.ante",
+					"match": "'.'"
+				},
+				{
+					"name": "constant.character.escape.ante",
+					"match": "'\\\\([abfnrtv]|([0-9]+))'"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ante",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ante",
+					"match": "\\\\([abfnrtv]|([0-9]+))"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ante"
+}
