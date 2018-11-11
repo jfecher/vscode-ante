@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ante",
-					"match": "\\b(fun) ([a-z_]*):",
+					"match": "\\b(fun) ([a-z_][A-Za-z_0-9]*):",
 					"captures":{
 						"1": {
 							"name": "keyword.control.ante"
