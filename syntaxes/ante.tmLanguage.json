@@ -29,19 +29,48 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ante",
-					"match": "\\b(fun) ([a-z_][A-Za-z_0-9]*):",
-					"captures":{
-						"1": {
-							"name": "keyword.control.ante"
-						},
-						"2": {
-							"name": "entity.name.function.ante"
-						}
-					}
+					"match": "\\b(if|elif|else|impl|import|with|for|in|do|while|continue|break|return|this|is|isnt|module|new|match|trait|module|type|given|block|and|or|not|then|do|as|pub|pro|pri|const|ante|mut|global)\\b"
 				},
 				{
-					"name": "keyword.control.ante",
-					"match": "\\b(if|elif|else|fun|import|with|for|in|do|while|continue|break|return|this|is|isnt|ext|new|match|trait|module|type|where|when|block|and|or|not|then|do|as|pub|pro|pri|const|ante|let|mut|global)\\b"
+					"match": "\\b([a-z_][a-z_A-Z0-9]*|(\\(.+\\))) +((([a-z_]\\w*)|([A-Z']\\w*)|(\\(([a-z_]\\w*)(:)(.*)\\))|(([a-z_]\\w*)(:)(('|\\w)+))|(\\([a-zA-Z_0-9 '.]*\\))|(...)) +)+ *(=|(->))",
+                    "captures":{
+                        "1": {
+                            "name": "entity.name.function.ante"
+                        },
+                        "5": {
+                            "name": "variable.parameter.ante"
+                        },
+                        "6": {
+                            "name": "entity.name.type.ante"
+                        },
+                        "8": {
+                            "name": "variable.parameter.ante"
+                        },
+                        "9": {
+                            "name": "keyword.control.ante"
+                        },
+                        "10": {
+                            "name": "entity.name.type.ante"
+                        },
+                        "12": {
+                            "name": "variable.parameter.ante"
+                        },
+                        "13": {
+                            "name": "keyword.control.ante"
+                        },
+                        "14": {
+                            "name": "entity.name.type.ante"
+                        },
+                        "16": {
+                            "name": "entity.name.type.ante"
+                        },
+                        "17": {
+                            "name": "keyword.control.ante"
+                        },
+                        "18": {
+                            "name": "keyword.control.ante"
+                        }
+                    }
 				}
 			]
 		},
@@ -61,8 +90,8 @@
 		"operators": {
 			"patterns": [
 				{
-					"name": "keyword.control.ante",
-					"match": "[+\\-*/%\\^:|#&=<>]"
+					"name": "keyword.operator.ante",
+					"match": "[+\\-*/%\\^:|#&=<>!]"
 				}
 			]
 		},
@@ -70,7 +99,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.type.ante",
-					"match": "\\b(i8|i16|i32|i64|isz|u8|u16|u32|u64|usz|f16|f32|f64|c8|void|bool|ref)\\b"
+					"match": "\\b(i8|i16|i32|i64|isz|u8|u16|u32|u64|usz|f16|f32|f64|c8|unit|bool|ref)\\b"
 				},
 				{
 					"name": "entity.name.type.ante",
