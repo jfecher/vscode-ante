@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ante",
-					"match": "\\b(if|elif|else|impl|import|with|for|in|do|while|continue|break|return|this|is|isnt|module|new|match|trait|module|type|given|block|and|or|not|then|do|as|pub|pro|pri|const|ante|mut|global)\\b"
+					"match": "\\b(if|elif|else|import|with|in|do|try|given|as|can|effect|handler|handle|continue|return|is|isnt|fn|opaque|impl|match|trait|module|recur|type|and|loop|do|then|not|or)\\b"
 				},
 				{
 					"match": "\\b([a-z_][a-z_A-Z0-9]*|(\\(.+\\))) +((([a-z_]\\w*)|([A-Z']\\w*)|(\\(([a-z_]\\w*)(:)(.*)\\))|(([a-z_]\\w*)(:)(('|\\w)+))|(\\([a-zA-Z_0-9 '.]*\\))|(...)) +)+ *(=|(->))",
@@ -99,7 +99,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.type.ante",
-					"match": "\\b(i8|i16|i32|i64|isz|u8|u16|u32|u64|usz|f16|f32|f64|c8|unit|bool|ref)\\b"
+					"match": "\\b(i8|i16|i32|i64|isz|u8|u16|u32|u64|usz|f16|f32|f64|char|unit|bool|ref|string)\\b"
 				},
 				{
 					"name": "entity.name.type.ante",
