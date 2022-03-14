@@ -8,6 +8,18 @@
         "type": "git",
         "url": "https://github.com/jfecher/vscode-ante.git"
     },
+    "keywords": [
+        "language",
+        "ante",
+        "syntax",
+        "highlighting"
+    ],
+    "homepage": "https://github.com/jfecher/vscode-ante",
+    "galleryBanner": {
+        "color": "#da4d4d",
+        "theme": "dark"
+    },
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.28.0"
     },
