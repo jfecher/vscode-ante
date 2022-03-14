@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ante",
-					"match": "\\b(if|elif|else|import|with|in|do|try|given|as|can|effect|handler|handle|continue|return|is|isnt|fn|opaque|impl|match|trait|module|recur|type|and|loop|do|then|not|or)\\b"
+					"match": "\\b(if|elif|else|import|with|in|do|try|given|as|mut|can|where|effect|handle|resume|return|is|fn|opaque|impl|match|trait|module|recur|type|and|loop|do|then|not|or)\\b"
 				},
 				{
 					"match": "\\b([a-z_][a-z_A-Z0-9]*|(\\(.+\\))) +((([a-z_]\\w*)|([A-Z']\\w*)|(\\(([a-z_]\\w*)(:)(.*)\\))|(([a-z_]\\w*)(:)(('|\\w)+))|(\\([a-zA-Z_0-9 '.]*\\))|(...)) +)+ *(=|(->))",
