@@ -14,6 +14,7 @@
         "syntax",
         "highlighting"
     ],
+    "main": "./out/extension",
     "homepage": "https://github.com/jfecher/vscode-ante",
     "galleryBanner": {
         "color": "#da4d4d",
@@ -46,6 +47,32 @@
                 "scopeName": "source.ante",
                 "path": "./syntaxes/ante.tmLanguage.json"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Ante",
+            "properties": {
+                "ante.languageServerPath": {
+                    "type": "string",
+                    "default": "/opt/ante/target/release/ante-ls",
+                    "description": "Path to the Ante language server executable"
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "path": "^0.12.7",
+        "vscode": "^1.1.37"
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run build-base -- --minify",
+        "build-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --target=node20",
+        "build": "npm run build-base -- --sourcemap",
+        "watch": "npm run build-base -- --sourcemap --watch",
+        "typecheck": "tsc"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.5",
+        "typescript": "^5.8.3"
     }
 }
