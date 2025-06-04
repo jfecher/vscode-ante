@@ -22,7 +22,7 @@
     },
     "icon": "icon.png",
     "engines": {
-        "vscode": "^1.28.0"
+        "vscode": "^1.100.0"
     },
     "categories": [
         "Programming Languages"
@@ -61,8 +61,7 @@
         }
     },
     "dependencies": {
-        "path": "^0.12.7",
-        "vscode": "^1.1.37"
+        "path": "^0.12.7"
     },
     "scripts": {
         "vscode:prepublish": "npm run build-base -- --minify",
@@ -72,7 +71,10 @@
         "typecheck": "tsc"
     },
     "devDependencies": {
+        "@types/node": "^22.15.29",
+        "@types/vscode": "^1.100.0",
         "esbuild": "^0.25.5",
-        "typescript": "^5.8.3"
+        "typescript": "^5.8.3",
+        "vscode-languageclient": "^9.0.1"
     }
 }
