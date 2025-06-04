@@ -1,20 +1,13 @@
 # vscode-ante
 
 This plugin provides basic editor support for the programming language Ante.
-Currently, this only includes basic syntax highlighting, although language server
-support is planned once one is available.
+This includes language server support through `ante-ls` provided it is installed separately.
 
 ![Syntax Highlighting](images/syntax-highlighting.png)
 
 ## Features
 
-- Syntax Highlighting:
+- Syntax highlighting:
 ![Syntax Highlighting](images/syntax-highlighting-full.png)
-
-## Installation
-
-Simply clone the repository to your ~/.vscode/extensions or ~/.vscode-oss/extensions folder.
-
-```sh
-$ git clone https://github.com/jfecher/vscode-ante ~/.vscode/extensions/vscode-ante
-```
+- Language server suppport through `ante-ls`
+  - Set `ante.languageServerPath` in the plugin configuration to the path to `ante-ls`
