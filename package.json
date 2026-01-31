@@ -38,7 +38,11 @@
                 "extensions": [
                     ".an"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./images/light-icon.png",
+                    "dark": "./images/dark-icon.png"
+                }
             }
         ],
         "grammars": [
