@@ -149,7 +149,7 @@
 				},
 				{
 					"name": "constant.numeric.ante",
-					"match": "\\b[0-9_]+\\.[0-9_]+(f(32|64))\\b"
+					"match": "\\b[0-9_]+\\.[0-9_]+(f(32|64))?\\b"
 				},
 				{
 					"name": "constant.numeric.ante",
