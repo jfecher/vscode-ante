@@ -58,8 +58,8 @@
             "properties": {
                 "ante.languageServerPath": {
                     "type": "string",
-                    "default": "/opt/ante/target/release/ante-ls",
-                    "description": "Path to the Ante language server executable"
+                    "default": "ante-ls",
+                    "description": "Path to the Ante language server executable. Resolved from $PATH unless an absolute path is given."
                 }
             }
         }

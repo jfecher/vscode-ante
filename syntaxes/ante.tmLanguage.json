@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ante",
-					"match": "\\b(if|else|import|with|is|export|in|do|recur|given|resume|pure|inherit|return|fn|opaque|where|derive|forward|impl|match|trait|module|for|while|as|type|and|loop|can|effect|handle|hiding|or|not|then|do|via|comptime|extern|mut|ref|uniq|imm|shared|block|exists|forall|freeze|implicit|var)\\b"
+					"match": "\\b(ability|and|as|block|break|can|comptime|continue|derive|do|else|exists|export|extern|fn|for|forall|freeze|given|handler|if|imm|impl|implicit|import|in|is|loop|match|module|move|mut|not|opaque|or|owned|pure|ref|resume|return|self|shared|then|type|uniq|var|via|while|with)\\b"
 				},
 				{
 					"match": "\\b([a-z_][a-z_A-Z0-9]*|(\\(.+\\))) +((([a-z_]\\w*)|([A-Z']\\w*)|(\\(([a-z_]\\w*)(:)(.*)\\))|(([a-z_]\\w*)(:)(('|\\w)+))|(\\([a-zA-Z_0-9 '.]*\\))|(...)) +)+ *(=|(->))",
@@ -91,16 +91,16 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.ante",
+					"match": ":="
+				},
+				{
+					"name": "keyword.operator.ante",
 					"match": "[+\\-*/%\\^:|#&=<>!]"
 				}
 			]
 		},
 		"types": {
 			"patterns": [
-				{
-					"name": "entity.name.type.ante",
-					"match": "\\b(i8|i16|i32|i64|isz|u8|u16|u32|u64|usz|f16|f32|f64|char|unit|bool|ref|string)\\b"
-				},
 				{
 					"name": "entity.name.type.ante",
 					"match": "\\b[A-Z]\\w*\\b"
@@ -185,6 +185,29 @@
 				{
 					"name": "constant.character.escape.ante",
 					"match": "\\\\([abfnrtv]|([0-9]+))"
+				},
+				{
+					"name": "meta.interpolation.ante",
+					"begin": "\\${",
+					"end": "}",
+					"beginCaptures": {
+						"0": { "name": "punctuation.section.interpolation.ante" }
+					},
+					"endCaptures": {
+						"0": { "name": "punctuation.section.interpolation.ante" }
+					},
+					"patterns": [
+						{ "include": "#keywords" },
+						{ "include": "#comments" },
+						{ "include": "#literals" },
+						{ "include": "#types" },
+						{ "include": "#operators" },
+						{ "include": "#strings" }
+					]
+				},
+				{
+					"name": "variable.other.interpolation.ante",
+					"match": "\\$\\w+"
 				}
 			]
 		}
