@@ -4,6 +4,11 @@ All notable changes to the "ante" extension will be documented in this file.
 
 This project adheres to [Keep a Changelog](http://keepachangelog.com/).
 
+## [0.3.2] - 2026-05-27
+
+### Changed
+- Improved highlight of function calls, `fn` is now properly highlighted as a keyword when in a trailing position
+
 ## [0.3.1] - 2026-05-27
 
 ### Added

@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#functions"
+		},
+		{
 			"include": "#comments"
 		},
 		{
@@ -30,47 +33,37 @@
 				{
 					"name": "keyword.control.ante",
 					"match": "\\b(ability|and|as|block|break|can|comptime|continue|derive|do|else|exists|export|extern|fn|for|forall|freeze|given|handler|if|imm|impl|implicit|import|in|is|loop|match|module|move|mut|not|opaque|or|owned|pure|ref|resume|return|self|shared|then|type|uniq|var|via|while|with)\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"comment": "definition/application head at line start: `add a b = ...`. Excludes keywords and requires a following argument (so value bindings like `x = 3` are not matched).",
+					"match": "^\\s*(?!(?:ability|and|as|block|break|can|comptime|continue|derive|do|else|exists|export|extern|fn|for|forall|freeze|given|handler|if|imm|impl|implicit|import|in|is|loop|match|module|move|mut|not|opaque|or|owned|pure|ref|resume|return|self|shared|then|type|uniq|var|via|while|with)\\b)([a-z_]\\w*)(?=\\s+[a-zA-Z_0-9(\\[{\"'])",
+					"captures": {
+						"1": { "name": "entity.name.function.ante" }
+					}
 				},
 				{
-					"match": "\\b([a-z_][a-z_A-Z0-9]*|(\\(.+\\))) +((([a-z_]\\w*)|([A-Z']\\w*)|(\\(([a-z_]\\w*)(:)(.*)\\))|(([a-z_]\\w*)(:)(('|\\w)+))|(\\([a-zA-Z_0-9 '.]*\\))|(...)) +)+ *(=|(->))",
-                    "captures":{
-                        "1": {
-                            "name": "entity.name.function.ante"
-                        },
-                        "5": {
-                            "name": "variable.parameter.ante"
-                        },
-                        "6": {
-                            "name": "entity.name.type.ante"
-                        },
-                        "8": {
-                            "name": "variable.parameter.ante"
-                        },
-                        "9": {
-                            "name": "keyword.control.ante"
-                        },
-                        "10": {
-                            "name": "entity.name.type.ante"
-                        },
-                        "12": {
-                            "name": "variable.parameter.ante"
-                        },
-                        "13": {
-                            "name": "keyword.control.ante"
-                        },
-                        "14": {
-                            "name": "entity.name.type.ante"
-                        },
-                        "16": {
-                            "name": "entity.name.type.ante"
-                        },
-                        "17": {
-                            "name": "keyword.control.ante"
-                        },
-                        "18": {
-                            "name": "keyword.control.ante"
-                        }
-                    }
+					"name": "entity.name.function.ante",
+					"match": "[a-z_]\\w*(?= *[(\\[\"'])"
+				},
+				{
+					"name": "entity.name.function.ante",
+					"match": "[a-z_]\\w*(?= *\\{)"
+				},
+				{
+					"name": "entity.name.function.ante",
+					"match": "[a-z_]\\w*(?= *<\\|)"
+				},
+				{
+					"name": "entity.name.function.ante",
+					"match": "(?<=\\|> )[a-z_]\\w*"
+				},
+				{
+					"name": "entity.name.function.ante",
+					"match": "(?<=\\\\)\\w+"
 				}
 			]
 		},
@@ -145,11 +138,11 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.ante",
-					"match": "\\b[0-9_]+([ui](8|16|32|64|sz))?\\b"
+					"match": "\\b[0-9_]+\\.[0-9_]+(f(32|64))?\\b"
 				},
 				{
 					"name": "constant.numeric.ante",
-					"match": "\\b[0-9_]+\\.[0-9_]+(f(32|64))?\\b"
+					"match": "\\b[0-9_]+([ui](8|16|32|64|sz))?\\b"
 				},
 				{
 					"name": "constant.numeric.ante",
